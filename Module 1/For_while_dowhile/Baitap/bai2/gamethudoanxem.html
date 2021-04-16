@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text ; " id="min">
+<input type="text" id ="max">
+<button onclick="play()">Play</button>
+<script>
+    function play() {
+     let min = document.getElementById("min").value;
+     let max = document.getElementById("max").value;
+     let radom = Math.floor(Math.random() * (max - min) ) + min;
+     let i =0;
+     while (i<=2) {
+         i++;
+         let num = parseInt(prompt("Nhập số bạn đoán :"));
+         if ( num === radom) {
+             alert("Xin chúc mừng bạn đã thành công ");
+         }else {
+             alert("Xin chúc mừng bạn đã xỉu :)) ")
+         }
+     }
+
+    }
+</script>
+</body>
+</html>

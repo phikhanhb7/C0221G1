@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Số lớn nhất trong mãng và vị trí</title>
+</head>
+<body>
+<script>
+    let arr = [12,3,4,23,45,67,45,34,67,9] ;
+    let max = arr[0] ;
+    let index = 0 ;
+    for (let i=0 ; i < arr.length ; i ++ ){
+        if ( arr[i ] > max ) {
+            max = arr[ i] ;
+            index = i ;
+        }
+    } console.log("Số đó là : " + max + " index " + index );
+</script>
+</body>
+</html>

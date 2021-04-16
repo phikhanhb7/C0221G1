@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  let message ="tôi                   tên là     ";
+  let arr = message.split(" ");
+  let count = 0;
+  for (let item of arr) {
+      // if(item !== ''){
+      if(item.length > 0){
+          count++;
+      }
+  }
+  alert(count)
+</script>
+</body>
+</html>

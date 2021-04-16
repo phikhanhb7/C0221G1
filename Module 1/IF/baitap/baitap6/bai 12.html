@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    totalmoney();
+    function totalmoney() {
+        let minute = parseInt(prompt("Nhập số phút gọi "));
+        let money1 = 1000; // Số tiền gọi 1 phút khi  20 phút trở lên
+        let money2 = 500 ; // Số tiền gọi 1 phút khi dưới 20 phút
+        let result ;
+        if (minute >= 20) {
+            alert(result  = ( minute * money1));
+        }else {
+            alert(result  = ( minute * money2) );
+        }
+    }
+</script>
+</body>
+</html>

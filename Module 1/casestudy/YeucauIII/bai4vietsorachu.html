@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>let str= ['không', 'một', 'hai', 'ba', 'bốn', 'năm', 'sáu', 'bảy', 'tám', 'chín'];
+let number=prompt('Nhập vào số cần đổi thành chữ ');
+let result='';
+for (let i=0;i <number.length;i++){
+    result+= str[number[i]]; // phần tử thứ number[i] của str
+}
+alert('Số nhập' + number+ '\n Thành chữ là ;' + result)
+
+
+
+
+    // let n = parseInt(prompt("Nhập số ."));
+    // let str = "";
+    // while (n>0){
+    //     let i = n % 10 ;
+    //     str =   convert(i ) + str ;
+    //     n = parseInt( n/10 );
+    // }
+    // alert(str);
+    // function convert(i) {
+    //     switch (i) {
+    //         case 0 :
+    //             return  " không " ;
+    //             break;
+    //         case 2 :
+    //             return  " hai " ;
+    //             break;
+    //
+    //         case 1 :
+    //             return  " một" ;
+    //             break;
+    //         case 3 :
+    //             return  " ba " ;
+    //             break;
+    //         case 4 :
+    //             return "bốn " ;
+    //             break;
+    //         case 5 :
+    //             return  " năm " ;
+    //             break;
+    //         case 6 :
+    //             return  " sáu " ;
+    //             break;
+    //         case 7 :
+    //             return " bảy " ;
+    //             break;
+    //         case 8 :
+    //             return " tám " ;
+    //             break;
+    //         case 9:
+    //             return " chín " ;
+    //             break;
+    //     }
+    //
+    // }
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let str = prompt("Nhập chuổi bạn muốn tìm ").split("");
+
+    function demKyTuInHoa(str) {
+        let count = 0;
+        let str2 = "QWRTYUIOPASDFGHJKLZXCVBNM".split("");
+        for (let i = 0; i < str2.length; i++) {
+            for (let j = 0; j < str.length; j++) {
+                if (str2[i] == str[j]) {
+                    count++;
+                }
+            }
+        }
+        if (count > 0) {
+            alert("Số ký tự viết hoa là " + count);
+        } else {
+            alert("The String is not contain uppper char ");
+        }
+
+    }
+    demKyTuInHoa(str);
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let arr2 = [];
+    let a = prompt('Nhập số phần tử');
+    for (let i = 0; i < a; i++) {
+        arr[i] = parseInt(prompt('Nhập phân tử thứ '+(i+1)))
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+        arr2[i] = 0;
+        for (let j = 0; j <= i; j++) {
+            arr2[i] += parseInt(arr[j])
+        }
+
+    }
+    document.write(arr2.toString())
+    // let input =[];
+    // let output = [];
+    // let n =  parseInt(prompt("input n "));
+    //
+    // for (let i = 0; i < n; i++) {
+    //     input[i] = output[i]= i + 1 ;//parseInt(prompt("input input[" + i + "]"));
+    // }
+    //
+    // // for (let i = 0; i < n; i++) {
+    // //     let sum = 0;
+    // //     for (let j = 0 ; j <= i ; j++ ) {
+    // //         sum = sum + input[j];
+    // //     }
+    // //     output[i] = sum;
+    // // }
+    //
+    // sum = 0 ;
+    // for (let i = 0; i < n; i++) {
+    //     output[i] = input[i] + sum;
+    //     sum = sum + input[i];
+    // }
+    // console.log(input);
+    // console.log(output);
+
+</script>
+</body>
+</html>

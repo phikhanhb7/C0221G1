@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script >
+    let  physics;
+    let chemistry ;
+    let biology;
+    physics = prompt( "Nhập điểm Lý");
+    chemistry= prompt("Nhập điểm Hóa ") ;
+    biology = prompt("Nhập điểm Hóa ");
+    alert(ave(parseInt(physics),parseInt(biology) ,parseInt(chemistry) ));
+
+    function ave(physics,biology,chemistry) {
+
+        return (physics + biology + chemistry)/3;
+    }
+
+</script>
+</body>
+</html>

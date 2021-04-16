@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Telephone {
+        constructor(status, pin, write, inbox, send,name) {
+            this.status = status;
+            this.pin = pin;
+            this.write = write;
+            this.inbox = inbox;
+            this.send = send;
+            this.name = name ;
+
+        }
+
+        isStatus() {
+            return this.status;
+        }
+
+        reverseStatus() {
+            this.status = !this.status;
+        }
+
+        changePin() {
+            if (this.pin < 100) {
+                this.pin++;
+            }
+
+        }
+
+        writeMessage() {
+            if (this.status) {
+                this.write = prompt("Nhap gi ban muon gui ");
+                this.pin--;
+            }
+
+        }
+
+        sendMessage(telephone) {
+            if (this.status) {
+                this.send = this.write;
+                telephone.inbox = this.send;
+                this.pin--;
+            }
+        }
+
+        showMessage() {
+            if (this.status) {
+                alert(this.name + " message inbox : " + this.inbox);
+                this.pin--;
+            }
+        }
+
+        showSendMessage() {
+            if (this.status) {
+                alert(this.name + " message send : " +this.send);
+                this.pin--;
+            }
+        }
+    }
+    let iphone = new Telephone(true,100,"","","","IPhone");
+    let samsum = new Telephone(true,100,"","","","SamSum");
+    iphone.writeMessage();
+    iphone.sendMessage(samsum);
+    iphone.showSendMessage();
+
+    samsum.showMessage();
+
+</script>
+</body>
+</html>

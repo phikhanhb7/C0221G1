@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    point();
+    function point() {
+        let a = parseInt(prompt("Nhập điểm kiểm tra"));
+        let b = parseInt(prompt("Nhập điểm giữa kỳ"));
+        let c = parseInt(prompt("Nhập điểm cuối kỳ"));
+         let result = (( a +b +c )/ 3 );
+         if ( result >=7.5 ){
+             alert(" Đạt hạng A");
+         }else if ( result >6.5 ){
+            alert(" Đạt hạng B");
+        }else if ( result >5.0 ){
+            alert(" Đạt hạng C");
+        }else if ( result >3.5 ){
+            alert(" Đạt hạng D");
+        }else {
+             alert(" Đạt hạng F");
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let message = prompt("Nhap") ;
+    let arr = [ "1","2", "3", "4", "5", "6", "7", "8", "9", "0"] ;
+    function soSanh() {
+        let result = arr.indexOf(message);
+        if ( result != -1){
+            return true
+        }else {
+            return false
+        }
+
+    }alert(soSanh(message));
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+// let arr1 = ["Polaris", "Aldebaran","Deneb", "Vega", "Altair", "Dubhe","Regulus"];
+// let arr2 = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+// let m = prompt("Nhập sao bạn tìm ") ;
+// let result = m.indexOf(arr1);
+// for (let i= 0 ; i < arr1.length ; i ++ ){
+//     if (result != -1){
+//         document.write(arr2[i]);
+//     }else {
+//         document
+//     }
+// }
+   function find(name) {
+       let arr1='Polaris,Aldebaran,Deneb,Vega,Altair,Dubhe,Regulus'.split(',');
+       let arr2='Ursa Minor,Tarurus,Cygnus,Lyra,Aquila,Ursa Major,Leo'.split(',');
+       for (let i=0; i<arr1.length; i++){
+           if (name==arr1[i]){
+               return arr2[i];
+               break;
+           }
+       }
+
+   }
+   let name=prompt('');
+   alert(find(name));
+
+
+
+
+</script>
+</body>
+</html>

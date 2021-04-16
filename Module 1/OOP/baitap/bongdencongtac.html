@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Bài Tập Vịt Hóa Thiên Nga </h2>
+<img src="https://sohanews.sohacdn.com/2020/2/26/photo-1-158270587240769675748.jpg" id="image">
+<button onclick="change()">Biến Hình </button>
+<h3 id="result" >Trạng thái ban đầu </h3>
+<script>
+   class Button {
+       constructor(status) {
+           this.status = status ;
+       }
+       turnOn_turnOff(){
+           this.status = !this.status ;
+       }
+   }
+   class Image{
+       constructor(button,status) {
+           this.button =button;
+           this.status = status ;
+       }
+       change(){
+           if (this.button.status){
+               document.getElementById("image").src= "http://vinathis.com/news/uploads/news/2018_09/hinh-anh-gai-xinh-sexy-161.jpg" ;
+               document.getElementById("result").innerText= " Đã chuyển đổi ";
+
+           }else { document.getElementById("image").src= "https://sohanews.sohacdn.com/2020/2/26/photo-1-158270587240769675748.jpg" ;
+               document.getElementById("result").innerText= " Trạng thái ban đầu  ";
+
+           }
+       }
+   }
+   let connect = new Button(false);
+   let image = new Image(connect , false) ;
+   function change() {
+       connect.turnOn_turnOff() ;
+       image.change();
+
+   }
+
+
+</script>
+</body>
+</html>

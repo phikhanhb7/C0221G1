@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="anh-nobita-dep-trai-ba-dao.jpg" id="nobita" style="position: relative;left: 0px;top: 0px;" width="400px"; height="400px">
+<script>
+    function up() {
+        let element = document.getElementById("nobita") ;
+        element.style.top = parseInt(element.style.top) - 20 + "px";
+
+    }
+    function down() {
+        let element = document.getElementById("nobita") ;
+        element.style.top = parseInt(element.style.top) + 20 + "px";
+
+    }
+    function left() {
+        let element = document.getElementById("nobita") ;
+        element.style.left = parseInt(element.style.left) -20 + "px";
+
+    }
+    function right() {
+        let element = document.getElementById("nobita") ;
+        element.style.left = parseInt(element.style.left) + 20 + "px";
+
+    }
+    function move(evt) {
+      switch (evt.keyCode) {
+          case 37 :
+              left();
+              break;
+          case 39 :
+              right();
+              break;
+          case 38 :
+              up();
+              break;
+          case 40 :
+              down();
+              break;
+      }
+    }
+    function init() {
+        window.addEventListener('keydown', move);
+
+    }
+    init();
+
+</script>
+</body>
+</html>

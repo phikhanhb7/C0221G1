@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="400px" height="200px" style="border: solid 1px black"></canvas>
+
+<script>
+    let myCanvas = document.getElementById("myCanvas");
+    let ctx = myCanvas.getContext("2d");
+    ctx.fillStyle = "red";
+    ctx.fillRect(100, 50 , 200, 100);
+    // ctx.beginPath();
+    // ctx.arc(200, 100, 100, Math.PI, 4*Math.PI);
+    ctx.stroke();
+</script>
+</body>
+</html>

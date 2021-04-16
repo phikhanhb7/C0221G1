@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let number = [ 4,3,2,6,7,8,5,99,33,66,100];
+    let max = number[0];
+    let index = 0;
+    for (let i =0 ; i < number.length ; i++) {
+        if (number[i] > max){
+            max =number[i];
+            index=i;
+        }
+    }alert("Số lớn nhất là " + max +"Ở vị trí thứ" + index) ;
+</script>
+</body>
+</html>

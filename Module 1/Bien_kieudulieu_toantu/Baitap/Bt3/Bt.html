@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Caculator</h2>
+<input type="text" id="nhapa">
+<input type="text" id="nhapb" ><br><br>
+<input  type="button" value="Addition(+)" onclick="add()">
+<input  type="button" value="Subtraction(-)" onclick="sub()">
+<input  type="button" value="miutiplicaltion(X)" onclick="mutli()">
+<input  type="button" value="Divition(/)" onclick="division()">
+
+<script>
+    function add() {
+        let a= parseInt(document.getElementById("nhapa").value);
+        let b= parseInt(document.getElementById("nhapb").value);
+        alert(a + b);
+
+
+    }
+    function sub() {
+        let a= parseInt(document.getElementById("nhapa").value);
+        let b=parseInt(document.getElementById("nhapb").value);
+        alert(a - b);
+
+    }
+    function mutli() {
+        let a= parseInt(document.getElementById("nhapa").value);
+        let b= parseInt(document.getElementById("nhapb").value);
+        alert(a * b);
+
+    }
+    function division() {
+        let a= parseInt(document.getElementById("nhapa").value);
+        let b=parseInt( document.getElementById("nhapb").value);
+        alert(a / b);
+
+    }
+</script>
+</body>
+</html>

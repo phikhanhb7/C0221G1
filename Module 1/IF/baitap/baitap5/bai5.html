@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table { height: 400px ; width: 800px}
+        input { width: 100% ; height: 100%}
+        tr td { border: solid}
+    </style>
+</head>
+<body>
+<form>
+    <table border="1" style="border: solid">
+        <tr>
+            <td colspan="4"><input id = "result" type="text" value="0" style="text-align: right" ; width="100%" > </td>
+        </tr>
+        <tr>
+            <td><input type="button" value="1" onclick="setvalue(1)"></td>
+            <td><input type="button" value="2" onclick="setvalue(2)"></td>
+            <td><input type="button" value="3" onclick="setvalue(3)"></td>
+            <td><input type="button" value="+" onclick="setMethod('+')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" onclick="setvalue(4)"></td>
+            <td><input type="button" value="5" onclick="setvalue(5)"></td>
+            <td><input type="button" value="6" onclick="setvalue(6)"></td>
+            <td><input type="button" value="-"  onclick="setMethod('-')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" onclick="setvalue(7)"></td>
+            <td><input type="button" value="8" onclick="setvalue(8)"></td>
+            <td><input type="button" value="9" onclick="setvalue(9)"></td>
+            <td><input type="button" value="*"  onclick="setMethod('*')"></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="C" onclick="clearn()"></td>
+            <td><input type="button" value="0" onclick="setvalue(0)"></td>
+            <td><input type="button" value="=" onclick="cal()"></td>
+            <td><input type="button" value="/" onclick="setMethod('/')"></td>
+        </tr>
+    </table>
+</form>
+    <script>
+        let a = 0,b = 0,method='';
+        function setvalue(num) {
+            if(method == '') {
+                a = a * 10 + num;
+            } else {
+                b = b * 10 + num;
+            }
+            document.getElementById('result').value += num;
+        };
+        function setMethod(methodArr) {
+            method = methodArr;
+            document.getElementById('result').value += methodArr;
+        };
+        function cal(){
+            let result = 0;
+            switch (method) {
+                case "+":
+                    result = a+b;
+                    break;
+                case  "-" :
+                    result = a -b;
+                    break;
+                case "*":
+                    result = a*b;
+                    break;
+                case "/":
+                    result =a/b;
+                    break;
+            }
+            document.getElementById('result').value = result;
+            a = result,b = 0;
+        };
+
+        function clearn() {
+            document.getElementById('result').value = '0';
+            a = 0,b = 0,method='';
+        }
+
+    </script>
+</body>
+</html>

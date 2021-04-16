@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = prompt("Nhập phần tử mảng lớn");
+    let m = prompt("Nhập phần tử các mảng nhỏ ");
+    let arr = [];
+    for (let i =0 ; i < n ; i ++){
+        arr[i] = [];
+        for (let j = 0 ; j < m ; j ++){
+            arr[i][j]= parseInt(prompt("nhập phần tử của các mảng nhỏ"));
+        }
+    }
+    let max = arr[0][0];
+    let min = arr[0][0];
+    for (let i = 0; i< arr.length ; i ++){
+        for (let j = 0 ; j < arr[i].length ; j ++){
+        if (arr[i][j]> max) {
+            max = arr [i][j];
+        }
+        if ( arr[i][j]< min){
+            min = arr[i][j];
+        }
+        }
+    }
+    alert("giá trị Max là " + max + " Giá trị  Min là " + min );
+</script>
+</body>
+</html>

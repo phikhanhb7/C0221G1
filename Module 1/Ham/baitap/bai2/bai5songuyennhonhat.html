@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function soSanhMin(num1,num2,num3) {
+        if (num1 < num2 && num2 < num3) {
+           return num1 ;
+        } else if (num2 > num3 && num1>num2) {
+            return num3;
+        } else {
+            return num2 ;
+
+        }
+    }
+    let num1 = parseInt(prompt(""));
+    let num2 = parseInt(prompt(""));
+    let num3 = parseInt(prompt(""));
+    alert(soSanhMin(num1,num2,num3)) ;
+
+</script>
+</body>
+</html>

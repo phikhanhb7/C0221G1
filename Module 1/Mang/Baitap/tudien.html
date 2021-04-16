@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ Điển</title>
+</head>
+<body>
+<input type="text" id="ngonngu">
+<input type="button" value="check" onclick="dich()">
+<script>
+   function dich() {
+       let arr1 = [
+           "hello" ,
+           "family" ,
+           "money " ,
+       ];
+       let arr2 = [
+           "Xin chào ",
+           "Gia đình",
+           "Tiền" ,
+       ];
+       let text = document.getElementById("ngonngu"). value;
+       for (let i=0 ; i < arr1.length ; i ++){
+           if (arr1[i]== text ) {
+               alert( arr2[i]) ;
+               break;
+           }else {
+               alert("Không có kết quả ") ;
+           }
+       }
+
+   }
+</script>
+</body>
+</html>

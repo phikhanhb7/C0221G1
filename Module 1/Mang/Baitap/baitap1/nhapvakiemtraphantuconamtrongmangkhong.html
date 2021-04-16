@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [] ;
+    let count = 0 ;
+    let v = prompt("Nhập chuổi cần tìm ") ;
+    for (let i =0 ; i < 5 ; i ++) {
+        arr[i]= prompt("Nhập phần tử của chuổi") ;
+        if (v.indexOf(arr[i]) != -1 ){
+            count ++ ;
+    }
+    }if ( count > 0 ) {
+        alert("V is in the array");
+    }else {
+        alert("V is not in the array");
+    }
+
+    // let a = prompt( " Nhập chuổi ") ;
+    // let n = a.split(",");// đổi chuổi thành mảng .
+    // let v = prompt( " Nhập phần tử muốn tìm");
+    // let ketqua ="";
+    // for (let i= 0 ; i < n.length ; i++ ){
+    //     if (v==n[i]) {
+    //         ketqua+= n[i];
+    //     }else {
+    //         ketqua+="";
+    //     }
+    // }
+    //
+    // if (ketqua = '') {
+    //     alert("V is not in the array");
+    // }else {
+    //     alert("V is in the array");
+    // }
+
+
+
+</script>
+</body>
+</html>

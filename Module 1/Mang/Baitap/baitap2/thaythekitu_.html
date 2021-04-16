@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = prompt("Nhap so luongphanf tu mang");
+    let arr = [];
+    for (let i=0 ; i < n ; i ++ ){
+        arr[i] = prompt("Nhap phan tu " + i );
+    }
+    for (let i= 0 ; i < arr.length; i++) {
+        arr[i] = arr[i].replaceAll("-", "_");
+    }
+    alert(arr);
+    // // let arr = ["a", '1' ,'2', "b" ,"-" , "-"];
+    // let n= prompt("");
+    // let a = [] ;
+    // for (let i= 0 ; i < n ; i ++) {
+    //     a[i] = prompt("nhập");
+    //     // alert(a[i] + ",");
+    // }
+    // for (let i= 0 ; i < a.length; i++){
+    //     a[i] = a[i].replaceAll("-","_");
+    //
+    // }alert(a);
+</script>
+</body>
+</html>

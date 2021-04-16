@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    rose();
+    function rose() {
+        let numsp = parseInt(prompt("Số sản phẩm "));
+        let vndsp = parseInt(prompt("Giá 1 sản phẩm (triệu đồng) "));
+        let revenue = numsp * vndsp ;
+        if ( revenue < 50 ) {
+            alert("Số hoa hồng được nhận là : " + (revenue * 0.2));
+        }else if ( revenue < 100 ) {
+            alert("Số hoa hồng được nhận là : " + (revenue * 0.3));
+        }else {
+            alert("Số hoa hồng được nhận là : " + (revenue * 0.5));
+        }
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2 style="color: #d61b06">Các sản phẩm điện thoại của chúng tôi nhé : </h2>
+<p id="ketQua"></p>
+<input type="button" value="Thêm Điện Thoại " onclick="addDienThoai()">
+<script>
+    class DienThoai {
+        constructor(ma, ten, hang, gia) {
+            this.ma = ma;
+            this.ten = ten;
+            this.hang = hang;
+            this.gia = gia;
+        }
+
+        getMa() {
+            return this.ma;
+        }
+
+        setMa(ma) {
+            this.ma = ma;
+        }
+
+        getTen() {
+            return this.ten;
+        }
+
+        setTen(ten) {
+            this.ten = ten;
+        }
+
+        getHang() {
+            return this.hang;
+        }
+
+        setHang(hang) {
+            this.hang = hangang;
+        }
+
+        getGia() {
+            return this.gia;
+        }
+
+        setGia(gia) {
+            this.gia = gia;
+        }
+
+        toString() {
+            return "1. Mã = " + this.ma + "\n 2. Tên = " + this.ten + "\n3. Hãng = " + this.hang + "\n4. Giá = " + this.gia;
+        }
+    }
+
+    function display(list) {
+        let tableString = '<table border="1">\n' +
+            '    <tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>Mã Điện Thoại</th>\n' +
+            '        <th>Tên Sản Phẩm</th>\n' +
+            '        <th>Hãng Sản Xuất</th>\n' +
+            '        <th>Giá Sản Phẩm </th>\n' +
+            '\n' +
+            '    </tr>';
+        for (let i = 0; i < list.length; i++) {
+            tableString += '<tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + list[i].getMa() + '</td>\n' +
+                '        <td>' + list[i].getTen() + '</td>\n' +
+                '       <td>' + list[i].getHang() + '</td>\n' +
+                '       <td>' + list[i].getGia() + '</td>\n' +
+                '    </tr>';
+        }
+        tableString += '</table>';
+        document.getElementById("ketQua").innerHTML = tableString;
+    }
+
+    let listDienThoai = [];
+    let dienThoai1 = new DienThoai(111, "Iphone3", "Iphone", 180000);
+    let dienThoai2 = new DienThoai(112, "Nokia1280", "Nokia", 220000);
+    let dienThoai3 = new DienThoai(115, "SamSungA10", "SamSung", 300000);
+
+    listDienThoai.push(dienThoai1, dienThoai2, dienThoai3);
+    display(listDienThoai);
+
+    function addDienThoai() {
+        let ma = prompt(" Nhập Mã");
+        let ten = prompt(" Nhập Tên");
+        let hang = prompt(" Nhập Hãng");
+        let gia = prompt(" Nhập  Giá");
+        let dienThoai = new DienThoai(ma, ten, hang, gia);
+        listDienThoai.push(dienThoai);
+        display(listDienThoai);
+    }
+
+</script>
+</body>
+</html>

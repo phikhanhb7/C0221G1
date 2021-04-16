@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    tax();
+    function tax() {
+        let income = parseFloat(prompt("Nhập tổng số lương trong 1 năm "));
+        let result ;
+        if (income <= 60 ){
+            result = income * (5/100);
+            alert("Tổng thuế phải nộp là : " + result + "Triệu đồng ");
+        }else if ( income <= 120) {
+            result = income * (10/100);
+            alert("Tổng thuế phải nộp là : " + result + " Triệu đồng ");
+        }else if ( income <= 216) {
+            result = income * (15/100);
+            alert("Tổng thuế phải nộp là : " + result + " Triệu đồng ");
+        }else if ( income <= 384) {
+            result = income * (20/100);
+            alert("Tổng thuế phải nộp là : " + result + " Triệu đồng ");
+        }else if ( income <= 624) {
+            result = income * (25/100);
+            alert("Tổng thuế phải nộp là : " + result + " Triệu đồng ");
+        }else if ( income <= 960) {
+            result = income * (30/100);
+            alert("Tổng thuế phải nộp là : " + result + " Triệu đồng ");
+        }else {
+            result = income * (35/100);
+            alert("Tổng thuế phải nộp là : " + result + " Triệu đồng ");
+
+        }
+
+    }
+</script>
+</body>
+</html>

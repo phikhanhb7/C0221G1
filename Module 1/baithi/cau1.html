@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let array = [];
+    for (let i = 0; i <  20; i++) {
+        array[i] = parseInt(prompt('  Nhập phần tử thứ  : ' + (i+1 )));
+    }
+    alert(array);
+
+    let sum1 = 0;
+    let sum2 = 0;
+    let result ;
+    for (let i = 0; i < array.length ; i++) {
+        if (array[i] % 2 === 0) {
+            sum1 += array[i];
+        } else if (array[i] % 2 === 1) {
+            sum2 += array[i];
+        }
+    }
+    result = sum1 - sum2;
+    alert("Hiệu tổng các số chẳn và tổng các số lẻ có trong mãng là : " + result);
+</script>
+</body>
+</html>

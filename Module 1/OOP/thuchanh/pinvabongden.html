@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class Battery {
+        constructor(energy) {
+            this.ennergy = energy ;
+        }
+        getPin(){
+            return this.engergy;
+        }
+    };
+    class FlashLamp{
+        constructor(status) {
+            this.status= status ;
+        }
+        turnOn(){
+            if (this.ennergy > 0 ){
+                 return this.status;
+            }
+        }
+        turnOff(){
+            if (this.ennergy < 0) {
+                return  !this.status ;
+            }
+        }
+    }
+    let pin = new  Battery(100);
+    let flashLamp = new FlashLamp(false);
+
+</script>
+</body>
+</html>

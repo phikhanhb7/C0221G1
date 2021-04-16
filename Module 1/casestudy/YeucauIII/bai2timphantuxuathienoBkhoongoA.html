@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr1 = ["a","s","k","9","7","8","t","e","d","1","2","3"];
+    let arr2 = ["t","y","k","3","7","8","9","101"];
+    let arr3 = [] ;
+
+    for (let i= 0 ; i < arr2.length; i ++) {
+        let result = arr1.indexOf(arr2[i]);
+        if (result == -1) {
+          arr3.push(arr2[i]);
+        }
+    }
+    alert(arr3);
+</script>
+</body>
+</html>

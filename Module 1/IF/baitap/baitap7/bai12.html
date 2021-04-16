@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let vay=parseFloat(prompt('Số tiền vay '));
+        let rate=parseFloat(prompt(' Phần trăm lãi suất :'));
+        let month=parseInt(prompt(" Số tháng vay : "));
+        let total=vay+(vay*rate);
+        for (let i=2; i<=month;i++){
+            total=total+(total*rate);
+        }
+        alert( "Số tiền phải trả là : " + total);
+
+
+    </script>
+</body>
+</html>

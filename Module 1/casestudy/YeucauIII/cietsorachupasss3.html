@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = prompt("nhập vào phần tử của mảng :").split('');
+    let num = '0123456789'.split("");
+    let text = ['không', 'một', 'hai', 'ba', 'bốn', 'năm', 'sáu', 'bảy', 'tám', 'chín'];
+    let result = [];
+    for (let i = 0; i < n.length; i++) {
+        for (let j = 0; j < num.length; j++) {
+            if (isNaN(n[i])) {
+                result.push(n[i]);
+                break;
+            } else if (n[i] == num[j]) {
+                result.push(text[j]);
+                break;
+            }
+        }
+    }
+    alert(result.join(" "))
+
+</script>
+</body>
+</html>

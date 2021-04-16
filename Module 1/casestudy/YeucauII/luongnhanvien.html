@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let salary = parseInt(prompt(" Nhập số lương của bạn "));
+    let tax = 0 ;
+    let netSalary = 0 ;
+    if (salary >= 15000000){
+        tax = 20 ;
+    }else if (salary >= 7000000){
+        tax = 10 ;
+    }else {
+        tax = 5 ;
+    }
+    netSalary = salary - salary*tax/100;
+    alert("Tax : " + tax + "\n" + " Net Salary " + netSalary );
+    // let num = prompt(" Nhập lương của bạn ");
+    // let money ;
+    // if ( num >= 15 ){
+    //     money = num - (num * ( 20 /100 ));
+    //     alert(" Số lương thực bạn được nhận là :" + money + " Triệu Đồng") ;
+    //      num = prompt(" Nhập lương của bạn ");
+    // } else if ( num > 7 && num < 15  ){
+    //     money = num - (num * ( 10 /100 ));
+    //     alert(" Số lương thực bạn được nhận là :" + money + " Triệu Đồng") ;
+    //     num = prompt(" Nhập lương của bạn ");
+    // } else if ( num < 7 ){
+    //     money = num - (num * ( 5 /100 ));
+    //     alert(" Số lương thực bạn được nhận là :" + money + " Triệu Đồng") ;
+    //      num = prompt(" Nhập lương của bạn ");
+    // }
+</script>
+</body>
+</html>

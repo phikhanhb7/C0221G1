@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = prompt("Nhập phần tử mảng lớn");
+    let m = prompt("Nhập phần tử các mảng nhỏ ");
+    let arr = [];
+    for (let i =0 ; i < n ; i ++){
+        arr[i] = [];
+        for (let j = 0 ; j < m ; j ++){
+            arr[i][j]= prompt("nhập phần tử của các mảng nhỏ");
+        }
+    }
+    function timSonguyento(num) {
+        if (num < 2) {
+            return  false;
+        } else {
+            for (let i = 2; i < num - 1; i++) {
+                if (num % i == 0) {
+                    return  false;
+                    break;
+                }
+            }
+        }
+        return true;
+    }
+    let   arr2 = [];
+    for (let i = 0; i< arr.length ; i ++){
+        for (let j = 0 ; j< arr[i].length ; j ++){
+              if(timSonguyento(arr[i][j])){
+                  arr2.push(arr[i][j]);
+              }
+        }
+    }
+    document.write(arr2+" Số phần tử là số nguyên tố là " + arr2.length);
+</script>
+</body>
+</html>

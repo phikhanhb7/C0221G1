@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class VeSo {
+        constructor(conso) {
+            this.conso = conso;
+        }
+
+        setconso(so) {
+            if (this.conso.length < 6) {
+                this.conso[this.conso.length] = so;
+            }
+        }
+
+        checkNumber(sotrung) {
+            let count = 0;
+            for (let i = 0; i < 6; i++) {
+                if (sotrung.includes(this.conso[i])) {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        checkgiai(sotrung) {
+            let count = this.checkNumber(sotrung);
+            switch (count) {
+                case 6:
+                    alert("Bạn đã đặc biệt . Xin chúc mừng !");
+                    break;
+                case 5:
+                    alert("Bạn đã trúng giải nhất");
+                    break;
+                case 3:
+                    alert("Bạn đã trúng giải khuyến khích .");
+                    break;
+                default:
+                    alert("Khong trung");
+            }
+        }
+
+    }
+    class NguoiMua {
+        constructor(veso) {
+            this.veso = veso ;
+        }
+        setveso(ve) {
+            if (this.veso.length < 4) {
+                this.veso[this.veso.length] = ve;
+            }
+        }
+        checkveso(sotrung){
+            for (let i = 0 ; i < this.veso.length ; i ++){
+               this.veso[i].checkgiai(sotrung);
+            }
+        }
+    }
+    let veso = new VeSo([]);
+    let nguoimua = new NguoiMua([]) ;
+    veso.setconso("01");
+    veso.setconso("02");
+    veso.setconso("03");
+    veso.setconso("04");
+    veso.setconso("05");
+    veso.setconso("06");
+    nguoimua.setveso(veso);
+
+
+    alert("Random");
+    let veso2 = new VeSo([]);
+    for(let i = 0;i<6;i++){
+        let so = Math.floor(Math.random() * 100);
+        if (so < 10) {
+            veso2.setconso("0" + so);
+        } else {
+            veso2.setconso("" + so);
+        }
+    }
+    nguoimua.setveso(veso2);
+    let db = ["01","02","03","04","05","06"];
+    nguoimua.checkveso(db);
+</script>
+</body>
+</html>
