@@ -4,7 +4,7 @@ import Models.Services;
 
 import java.util.Scanner;
 
-public class MainController {
+public class MainController extends Customer{
 
     public static void displayMainMenu(){
         System.out.println("1 . Add New Services");
