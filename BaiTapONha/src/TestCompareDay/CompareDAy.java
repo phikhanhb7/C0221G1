@@ -1,11 +1,10 @@
 //package TestCompareDay;
 //
+//import java.text.ParseException;
+//import java.text.SimpleDateFormat;
 //import java.time.LocalDateTime;
 //import java.time.format.DateTimeFormatter;
-//import java.util.ArrayList;
-//import java.util.Collections;
-//import java.util.Comparator;
-//import java.util.List;
+//import java.util.*;
 //
 //public class CompareDAy {
 //    public static void main(String[] args) {
@@ -15,32 +14,35 @@
 //        datestring.add(s1);
 //        datestring.add(s2);
 //        Collections.sort(datestring, new Comparator<String>() {
+//            private Object DateTimeFormatter;
+//
 //            @Override
 //            public int compare(String o1, String o2) {
 //                return 0;
 //            }
 //
 //
-////                    @Override
-////                    public int compare(String o1, String o2) {
-////                        return DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-////                        Collections.sort(datestring, (s1, s2) -> LocalDateTime.parse(s1, formatter).
-////
-////                                compareTo(LocalDateTime.parse(s2, formatter)));
-////                    }
-////
-////                }
-////        try {
-////            Date date1 =new SimpleDateFormat("dd/MM/yyyy").parse("10/1/1996");
-////            System.out.println(date1);
-////            Date date2 =new SimpleDateFormat("dd/MM/yyyy").parse("10/10/1996");
-//////            System.out.println(date1.compareTo(date2));
-////            if (date1.compareTo(date2) == 1 ){
-////
-////            }
-////        } catch (ParseException e) {
-////            e.printStackTrace();
-////        }
+//                    @Override
+//                    public int compare(String o1, String o2) {
+//                        return DateTimeFormatter;
+//                        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+//                        Collections.sort(datestring, (s1, s2) -> LocalDateTime.parse(s1, formatter).
+//
+//                                compareTo(LocalDateTime.parse(s2, formatter)));
+//                    }
+//
+//                }
+//        try {
+//            Date date1 =new SimpleDateFormat("dd/MM/yyyy").parse("10/1/1996");
+//            System.out.println(date1);
+//            Date date2 =new SimpleDateFormat("dd/MM/yyyy").parse("10/10/1996");
+//            System.out.println(date1.compareTo(date2));
+//            if (date1.compareTo(date2) == 1 ){
+//
+//            }
+//        } catch (ParseException e) {
+//            e.printStackTrace();
+//        }
 //
 //        }
 //}
