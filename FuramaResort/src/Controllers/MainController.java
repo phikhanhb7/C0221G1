@@ -1,10 +1,10 @@
 package Controllers;
 
-import Models.Services;
+import Models.Customer;
 
 import java.util.Scanner;
 
-public class MainController extends Customer{
+public class MainController extends Customer {
 
     public static void displayMainMenu(){
         System.out.println("1 . Add New Services");

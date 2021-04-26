@@ -1,5 +1,9 @@
 package pass2_quan_ly_san_pham;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -178,7 +182,7 @@ public class ProductManager extends Products {
         System.out.println("Tạm Biệt");
         System.exit(0);
     }
-    public static void menu(){
+    public static void menu() throws IOException {
         System.out.println("1. Add Products : ");
         System.out.println("2. Edits Products : ");
         System.out.println("3. Delete Products : ");
@@ -188,6 +192,7 @@ public class ProductManager extends Products {
         System.out.println("7. Display Products : ");
         System.out.println("8. Search ID Products : ");
         System.out.println("9. Search Name Products : ");
+        System.out.println("10. Output Report : ");
         System.out.println("0. Exit: ");
         int choose ;
         System.out.println("Nhập Lựa chọn");
@@ -212,10 +217,23 @@ public class ProductManager extends Products {
                 break;
             case 9: searchName();
                 break;
+            case 10: outputReport();
+                break;
             case 0 : exitManage();
                 break;
         }
     }
 
+    private static void outputReport() throws IOException {
+        try {
+            FileWriter fw = new FileWriter("src\\pass2_quan_ly_san_pham\\readfile.csv");
+            for (Products product : productsList) {
+                fw.write(product.toString());
+            }
+            fw.close();
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
 
 }
