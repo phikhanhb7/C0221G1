@@ -4,11 +4,11 @@ import java.io.*;
 import java.util.List;
 
 public class WriteFile<E> {
-    public void writeToFile(String path , List<E> studentList){
+    public void writeToFile(String path , List<E> kk){
         try {
             FileOutputStream fos = new FileOutputStream(path);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(studentList);
+            oos.writeObject(kk);
             fos.close();
             oos.close();
         }catch (IOException e){
@@ -16,17 +16,17 @@ public class WriteFile<E> {
         }
     }
 
-    public  List<E> readFromFile(String path , List<E> studentList){
+    public  List<E> readFromFile(String path , List<E> bb){
         try{
             FileInputStream fis = new FileInputStream(path);
             ObjectInputStream ois = new ObjectInputStream(fis);
-            studentList = (List<E>) ois.readObject();
+            bb = (List<E>) ois.readObject();
             fis.close();
             ois.close();
         }catch ( Exception e){
             e.printStackTrace();
         }
-        return studentList ;
+        return bb ;
 
     }
 }
