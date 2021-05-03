@@ -1,4 +1,8 @@
-package quan_ly_phuong_tien;
+package service;
+
+import models.Oto;
+import models.XeMay;
+import models.XeTai;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -6,14 +10,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import static service.AddCar.*;
+
 public class ShowCar {
     public static Scanner input = new Scanner(System.in);
-    public static List<Oto> otos = new ArrayList<>();
-    public static List<XeTai> xeTais = new ArrayList<>();
-    public static List<XeMay> xeMays = new ArrayList<>();
-    static void showXeMay() {
+
+    public static void showXeMay() {
         try {
-            BufferedReader br = new BufferedReader(new FileReader("D:\\Module2\\src\\quan_ly_phuong_tien\\xeMay.csv"));
+            BufferedReader br = new BufferedReader(new FileReader("D:\\Module2\\Quan_Ly_Phuong_Tien\\src\\data\\XeMay.csv"));
             String line = null;
             while ((line = br.readLine()) != null) {
 //                line = br.readLine();
@@ -38,9 +42,9 @@ public class ShowCar {
         }
     }
 
-    static void showOTo() {
+    public static void showOTo() {
         try {
-            BufferedReader br = new BufferedReader(new FileReader("D:\\Module2\\src\\quan_ly_phuong_tien\\Oto.csv"));
+            BufferedReader br = new BufferedReader(new FileReader("D:\\Module2\\Quan_Ly_Phuong_Tien\\src\\data\\Oto.csv"));
             String line ;
             while ((line = br.readLine()) != null) {
 //                line = br.readLine();
@@ -69,9 +73,9 @@ public class ShowCar {
 
     }
 
-    static void showXeTai() {
+    public static void showXeTai() {
         try {
-            BufferedReader br = new BufferedReader(new FileReader("D:\\Module2\\src\\quan_ly_phuong_tien\\xeTai.csv"));
+            BufferedReader br = new BufferedReader(new FileReader("D:\\Module2\\Quan_Ly_Phuong_Tien\\src\\data\\XeTai.csv"));
             String line = null;
             while (true) {
                 line = br.readLine();

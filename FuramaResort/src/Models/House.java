@@ -52,8 +52,7 @@ public class House extends Services {
                 "typeOfRent" + super.getTypeOfRent() +
                 "standarRoom='" + standarRoom + '\'' +
                 ", comfortDescription='" + comfortDescription + '\'' +
-                ", numberOfFloor=" + numberOfFloor +
-                '}';
+                ", numberOfFloor=" + numberOfFloor +            '}';
     }
 }
 
