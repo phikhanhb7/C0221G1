@@ -5,6 +5,7 @@ public class House extends Services {
     private String comfortDescription;
     private int numberOfFloor;
 
+    public House(){}
     public House(String standarRoom, String comfortDescription, int numberOfFloor) {
         this.standarRoom = standarRoom;
         this.comfortDescription = comfortDescription;
