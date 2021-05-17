@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f54f5e34-0416-4cdd-bc6f-08401f166fa2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/bai11_stack_queue/baitap/bai2_chuoipalindrome/Palindrome.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bai11_stack_queue/baitap/bai4_to_chuc_du_lieu/ComparatorBirthDay.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bai11_stack_queue/baitap/bai4_to_chuc_du_lieu/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bai11_stack_queue/baitap/bai4_to_chuc_du_lieu/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bai11_stack_queue/baitap/bai_1_daonguocphantutrongmang/ChangeString.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bai11_stack_queue/baitap/chuye_thap_phan_sang_nhi_phan/MethodChange.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bai11_stack_queue/baitap/kiem_tra_dau_ngoac/BracKets.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="D:\New_Modul2\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1se14I84DlH1t5hkVo3kiXPGqan" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f54f5e34-0416-4cdd-bc6f-08401f166fa2" name="Default Changelist" comment="" />
+      <created>1621218048915</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1621218048915</updated>
+      <workItem from="1621218051380" duration="445000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>
