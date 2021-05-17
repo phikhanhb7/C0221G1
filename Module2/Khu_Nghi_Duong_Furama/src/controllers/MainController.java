@@ -1,523 +1,174 @@
 package controllers;
 
-import commons.DichVuException;
-import commons.DocGhiFile;
-import models.BietThu;
-import models.DichVu;
-import models.Nha;
-import models.Phong;
+import comoms.DocGhiFile;
+import manage.AddCustomers;
+import manage.ManageServices;
+import manage.NewBooking;
+import models.*;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Scanner;
 
 public class MainController {
+    static Scanner scanner = new Scanner(System.in);
+    static List<Customers> customersList = new ArrayList<>();
 
     public static void main(String[] args) {
-        while (true){
-            displayMainMenu();
-        }
+        displayMenu();
     }
-    static Scanner scanner = new Scanner(System.in);
-    static List<DichVu> dichVuList = new ArrayList<>();
 
-    public static void displayMainMenu(){
-        System.out.println("1.\t Add New Services\n" +
-                "2.\tShow Services\n" +
-                "3.\tAdd New Customer\n" +
-                "4.\tShow Information of Customer\n" +
-                "5.\tAdd New Booking\n" +
-                "6.\tShow Information of Employee\n" +
-                "7.\tExit\n");
 
-        int choose = 0 ;
+    public static void displayMenu() {
+        String choose;
         while (true) {
-            System.out.println("Nhập lựa chọn của bạn ");
-            choose = Integer.parseInt(scanner.nextLine());
-
-            switch (choose){
-                case 1 :
-                    addService();
+            System.out.println("1.\t Add New Services\n" +
+                    "2.\tShow Services\n" +
+                    "3.\tAdd New Customer\n" +
+                    "4.\tShow Information of Customer\n" +
+                    "5.\tAdd New Booking\n" +
+                    "6.\tShow Information of Employee\n" +
+                    "7.\tExit\n");
+            System.out.println(" Nhập lựa chọn của bạn ");
+            choose = scanner.nextLine();
+            switch (choose) {
+                case "1":
+                    addServices();
                     break;
-                case 2:
-                    showService();
-                case 3 :
-                    addCustomer();
+                case "2":
+                    showServices();
                     break;
-                case 4 :
-                    showInformationCustomer();
+                case "3":
+                    addCustomers();
                     break;
-                case 5:
-                    addBooking();
+                case "4":
+                    showCustomers();
                     break;
-                case 6:
-                    showInformationEmployee();
+                case "5":
+                    NewBooking.addBooking();
                     break;
-                case 7 :
+                case "6":
+                    showEmployee();
+                    break;
+                case "7":
                     System.out.println("GOOD BYE");
                     System.exit(0);
+                default:
+                    System.out.println("Vui lòng nhập từ 1 đến 7 ");
             }
         }
     }
 
-    private static void showInformationEmployee() {
+    private static void showEmployee() {
     }
 
-    private static void addBooking() {
+
+
+
+
+
+
+
+    private static void showCustomers() {
+        customersList = DocGhiFile.docFileCustomers("Customers.csv");
+        customersList.sort(Comparator.comparing(Customers::getHoTen).thenComparing(Customers::getNgaySinh));
+        for (Customers customer : customersList) {
+            System.out.println(customer.showInfor());
+        }
+
     }
 
-    private static void showInformationCustomer() {
+    private static void addCustomers() {
+        String hoTen = AddCustomers.nhapHoTen();
+        String ngaySinh = AddCustomers.nhapNgaySinh();
+        String gioiTinh = AddCustomers.nhapGioiTinh();
+        String soChungMinh = AddCustomers.nhapSoChungMinh();
+        String soDienThoai = AddCustomers.nhapSoDienThoai();
+        String email = AddCustomers.nhapEmail();
+        String loaiKhach = AddCustomers.nhapLoaiKhach();
+        String diaChi = AddCustomers.nhapDiaChi();
+
+        Customers customer = new Customers(hoTen, ngaySinh, gioiTinh, soChungMinh, soDienThoai, email, loaiKhach, diaChi);
+        customersList.add(customer);
+        DocGhiFile.ghiFileCustomer("Customers.csv", customersList, true);
     }
 
-    private static void addCustomer() {
-    }
-
-    private static void showService() {
-        System.out.println("1.\tShow all Villa\n" +
-                "2.\tShow all House\n" +
-                "3.\tShow all Room\n" +
-                "4.\tShow All Name Villa Not Duplicate\n" +
-                "5.\tShow All Name House Not Duplicate\n" +
-                "6.\tShow All Name Name Not Duplicate\n" +
-                "7.\tBack to menu\n" +
-                "8.\tExit\n");
-        int choose = 0 ;
-        while (true){
-            System.out.println("Nhap lua chon cua ban");
-            choose = Integer.parseInt(scanner.nextLine());
-            switch (choose){
-                case 1 :
-                    showAllVilla();
+    private static void showServices() {
+        String choose;
+        while (true) {
+            System.out.println("1.\tShow all Villa\n" +
+                    "2.\tShow all House\n" +
+                    "3.\tShow all Room\n" +
+                    "4.\tShow All Name Villa Not Duplicate\n" +
+                    "5.\tShow All Name House Not Duplicate\n" +
+                    "6.\tShow All Name Name Not Duplicate\n" +
+                    "7.\tBack to menu\n" +
+                    "8.\tExit\n");
+            System.out.println("Nhập lựa chọn :");
+            choose = scanner.nextLine();
+            switch (choose) {
+                case "1":
+                    ManageServices.showVilla();
                     break;
-                case 2 :
-                    showAllHouse();
+                case "2":
+                    ManageServices.showHouse();
                     break;
-                case 3:
-                    showAllRoom();
+                case "3":
+                    ManageServices.showRoom();
                     break;
-                case 4:
-                    showNameVilla();
+                case "4":
+                    ManageServices.showNameVillaDuplicate();
                     break;
-                case 5:
-                    showNameHouse();
+                case "5":
+                    ManageServices.showNameHouseDuplicate();
                     break;
-                case 6:
-                    showNameRoom();
+                case "6":
+                    ManageServices.showNameRoomDuplicate();
                     break;
-                case 7 :
-                    displayMainMenu();
-                    break;
-                case 8:
-                    System.out.println("GOOD BYE");
+                case "7":
+                    displayMenu();
+                case "8":
                     System.exit(0);
+                default:
+                    System.out.println("Vui lòng nhập đúng từ 1 đến 8");
             }
         }
-    }
 
-    private static void showNameRoom() {
-        Set<String> dichVuSet = new TreeSet<>();
-        DocGhiFile.docFile("dichvu.csv");
-        for (DichVu dichVu : dichVuList){
-            if (dichVu instanceof Phong){
-                dichVuSet.add(dichVu.getTenDichVu());
-            }
-        }
-        Iterator itr = dichVuSet.iterator();
-        while (itr.hasNext()) {
-            System.out.println(itr.next());
-        }
-    }
-
-    private static void showNameHouse() {
-        Set<String> dichVuSet = new TreeSet<>();
-        DocGhiFile.docFile("dichvu.csv");
-        for (DichVu dichVu : dichVuList){
-            if (dichVu instanceof Nha){
-                dichVuSet.add(dichVu.getTenDichVu());
-            }
-        }
-        Iterator itr = dichVuSet.iterator();
-        while (itr.hasNext()) {
-            System.out.println(itr.next());
-        }
-    }
-
-    private static void showNameVilla() {
-        Set<String> dichVuSet = new TreeSet<>();
-        DocGhiFile.docFile("dichvu.csv");
-        for (DichVu dichVu : dichVuList){
-            if (dichVu instanceof BietThu){
-                dichVuSet.add(dichVu.getTenDichVu());
-            }
-        }
-        Iterator itr = dichVuSet.iterator();
-        while (itr.hasNext()) {
-            System.out.println(itr.next());
-        }
 
     }
 
-    private static void showAllRoom() {
-        DocGhiFile.docFile("dichvu.csv");
-        for (DichVu dichVu : dichVuList){
-            if (dichVu instanceof Phong){
-                System.out.println(dichVu.showInfor());
-            }
-        }
-    }
 
-    private static void showAllHouse() {
-        DocGhiFile.docFile("dichvu.csv");
-        for (DichVu dichVu : dichVuList){
-            if (dichVu instanceof Nha){
-                System.out.println(dichVu.showInfor());
-            }
-        }
-    }
+    private static void addServices() {
 
-    private static void showAllVilla() {
-        DocGhiFile.docFile("dichvu.csv");
-        for (DichVu dichVu : dichVuList){
-            if (dichVu instanceof BietThu){
-                System.out.println(dichVu.showInfor());
-            }
-        }
-    }
-
-    private static void addService() {
-        System.out.println("1.\tAdd New Villa\n" +
-                "2.\tAdd New House\n" +
-                "3.\tAdd New Room\n" +
-                "4.\tBack to menu\n" +
-                "5.\tExit\n");
-        int chooose = 0 ;
-        while (true){
-            System.out.println("Nhap lua chon cua ban");
-            chooose = Integer.parseInt(scanner.nextLine());
-
-            switch (chooose){
-                case 1 :
-                    addnewVilla();
+        String choose;
+        while (true) {
+            System.out.println("1.\tAdd New Villa\n" +
+                    "2.\tAdd New House\n" +
+                    "3.\tAdd New Room\n" +
+                    "4.\tBack to menu\n" +
+                    "5.\tExit\n");
+            System.out.println("Nhập lựa chọn ");
+            choose = scanner.nextLine();
+            switch (choose) {
+                case "1":
+                    ManageServices.addVilla();
                     break;
-                case 2:
-                    addnewHouse();
+                case "2":
+                    ManageServices.addHouse();
                     break;
-                case 3 :
-                    addnewRoom();
+                case "3":
+                    ManageServices.addRoom();
                     break;
-                case 4 :
-                    displayMainMenu();
-                case 5 :
-                    System.out.println("GOOD BYE");
+                case "4":
+                    displayMenu();
+                case "5":
                     System.exit(0);
+                default:
+                    System.out.println("Vui lòng nhập đúng từ 1 đến 5");
             }
         }
     }
 
-    private static void addnewRoom() {
-        String tenDichVu = "";
-        while (true){
-            System.out.println("Nhap ten dich vu ");
-            tenDichVu = scanner.nextLine();
-            try {
-                DichVuException.kiemTraTenDichVu(tenDichVu);
-                break;
-            } catch (DichVuException e) {
-                System.err.println(e.getMessage());
-            }
-        }
 
-        String dienTichSuDung = "" ;
-        while (true){
-            System.out.println("Dien tich su dung");
-            dienTichSuDung = scanner.nextLine();
-            try {
-                DichVuException.kiemTraDienTich(dienTichSuDung);
-                break;
-            } catch (DichVuException e) {
-                System.err.println(e.getMessage());
-            }
-        }
-
-        String chiPhiThue = "";
-        while (true){
-            System.out.println("Chi phi thue");
-            chiPhiThue = (scanner.nextLine());
-            try {
-                DichVuException.kiemTraCiPhiThue(chiPhiThue);
-                break;
-            } catch (DichVuException e) {
-                System.err.println(e.getMessage());
-            }
-        }
-
-
-        String soNguoiToiDa = "" ;
-        while (true){
-            System.out.println("so nguoi toi da");
-            soNguoiToiDa =(scanner.nextLine());
-            try {
-                DichVuException.kiemTraSoNguoiToiDa(soNguoiToiDa);
-                break;
-            } catch (DichVuException e) {
-                System.err.println(e.getMessage());
-            }
-
-        }
-
-
-        String kieuThue = "";
-        while (true){
-            System.out.println(" kieu thue");
-            kieuThue = scanner.nextLine();
-            try {
-                DichVuException.kiemTraTenDichVu(kieuThue);
-                break;
-            } catch (DichVuException e) {
-                System.err.println(e.getMessage());
-            }
-        }
-
-        String dichVuDiKem = "" ;
-        while (true){
-            System.out.println("Dich vu di kiem");
-             dichVuDiKem = scanner.nextLine();
-            try {
-                DichVuException.kiemTraDichVuDiKem(dichVuDiKem);
-                break;
-            } catch (DichVuException e) {
-                System.err.println(e.getMessage());
-            }
-        }
-
-
-        Phong phong = new Phong(tenDichVu,Double.parseDouble(dienTichSuDung),Double.parseDouble(chiPhiThue),Integer.parseInt(soNguoiToiDa),kieuThue,dichVuDiKem);
-
-        dichVuList.add(phong);
-        DocGhiFile.ghiFile("dichvu.csv" , dichVuList , true);
-    }
-
-    private static void addnewHouse() {
-        String tenDichVu = "";
-        while (true){
-            System.out.println("Nhap ten dich vu ");
-            tenDichVu = scanner.nextLine();
-            try {
-                DichVuException.kiemTraTenDichVu(tenDichVu);
-                break;
-            } catch (DichVuException e) {
-                System.err.println(e.getMessage());
-            }
-        }
-
-        String dienTichSuDung = "" ;
-        while (true){
-            System.out.println("Dien tich su dung");
-            dienTichSuDung = scanner.nextLine();
-            try {
-                DichVuException.kiemTraDienTich(dienTichSuDung);
-                break;
-            } catch (DichVuException e) {
-                System.err.println(e.getMessage());
-            }
-        }
-
-        String chiPhiThue = "";
-        while (true){
-            System.out.println("Chi phi thue");
-            chiPhiThue = (scanner.nextLine());
-            try {
-                DichVuException.kiemTraCiPhiThue(chiPhiThue);
-                break;
-            } catch (DichVuException e) {
-                System.err.println(e.getMessage());
-            }
-        }
-
-
-        String soNguoiToiDa = "" ;
-        while (true){
-            System.out.println("so nguoi toi da");
-            soNguoiToiDa =(scanner.nextLine());
-            try {
-                DichVuException.kiemTraSoNguoiToiDa(soNguoiToiDa);
-                break;
-            } catch (DichVuException e) {
-                System.err.println(e.getMessage());
-            }
-
-        }
-
-
-        String kieuThue = "";
-        while (true){
-            System.out.println(" kieu thue");
-            kieuThue = scanner.nextLine();
-            try {
-                DichVuException.kiemTraTenDichVu(kieuThue);
-                break;
-            } catch (DichVuException e) {
-                System.err.println(e.getMessage());
-            }
-        }
-
-        String tieuchuanPhong = "";
-        while (true){
-            System.out.println("tieu chuan phong");
-            tieuchuanPhong = scanner.nextLine();
-            try {
-                DichVuException.kiemTraTenDichVu(tieuchuanPhong);
-                break;
-            } catch (DichVuException e) {
-                System.err.println(e.getMessage());
-            }
-        }
-        String tiennghiKhac = "" ;
-        while (true){
-            System.out.println("tien nghi khac");
-            tiennghiKhac = scanner.nextLine();
-            try {
-                DichVuException.kiemTraTenDichVu(tiennghiKhac);
-                break;
-            } catch (DichVuException e) {
-                System.err.println(e.getMessage());
-            }
-        }
-        String soTang = "" ;
-        while (true){
-            System.out.println("so Tang");
-            soTang = (scanner.nextLine());
-            try {
-                DichVuException.kiemTraSoTang(soTang);
-                break;
-            } catch (DichVuException e) {
-                System.err.println(e.getMessage());
-            }
-        }
-
-        Nha nha = new Nha(tenDichVu,Double.parseDouble(dienTichSuDung),Double.parseDouble(chiPhiThue),Integer.parseInt(soNguoiToiDa),kieuThue,tieuchuanPhong,tiennghiKhac,Integer.parseInt(soTang));
-        dichVuList.add(nha);
-        DocGhiFile.ghiFile("dichvu.csv",dichVuList,true);
-    }
-
-    private static void addnewVilla() {
-        String tenDichVu = "";
-        while (true){
-            System.out.println("Nhap ten dich vu ");
-            tenDichVu = scanner.nextLine();
-            try {
-                DichVuException.kiemTraTenDichVu(tenDichVu);
-                break;
-            } catch (DichVuException e) {
-                System.err.println(e.getMessage());
-            }
-        }
-
-         String dienTichSuDung = "" ;
-        while (true){
-            System.out.println("Dien tich su dung");
-            dienTichSuDung = scanner.nextLine();
-            try {
-                DichVuException.kiemTraDienTich(dienTichSuDung);
-                break;
-            } catch (DichVuException e) {
-                System.err.println(e.getMessage());
-            }
-        }
-
-        String chiPhiThue = "";
-        while (true){
-            System.out.println("Chi phi thue");
-           chiPhiThue = (scanner.nextLine());
-            try {
-                DichVuException.kiemTraCiPhiThue(chiPhiThue);
-                break;
-            } catch (DichVuException e) {
-                System.err.println(e.getMessage());
-            }
-        }
-
-
-        String soNguoiToiDa = "" ;
-        while (true){
-            System.out.println("so nguoi toi da");
-           soNguoiToiDa =(scanner.nextLine());
-            try {
-                DichVuException.kiemTraSoNguoiToiDa(soNguoiToiDa);
-                break;
-            } catch (DichVuException e) {
-                System.err.println(e.getMessage());
-            }
-
-        }
-
-
-        String kieuThue = "";
-        while (true){
-            System.out.println(" kieu thue");
-            kieuThue = scanner.nextLine();
-            try {
-                DichVuException.kiemTraTenDichVu(kieuThue);
-                break;
-            } catch (DichVuException e) {
-                System.err.println(e.getMessage());
-            }
-        }
-
-        String tieuchuanPhong = "";
-        while (true){
-            System.out.println("tieu chuan phong");
-            tieuchuanPhong = scanner.nextLine();
-            try {
-                DichVuException.kiemTraTenDichVu(tieuchuanPhong);
-                break;
-            } catch (DichVuException e) {
-                System.err.println(e.getMessage());
-            }
-        }
-
-        String tiennghiKhac = "" ;
-        while (true){
-            System.out.println("tien nghi khac");
-             tiennghiKhac = scanner.nextLine();
-            try {
-                DichVuException.kiemTraTenDichVu(tiennghiKhac);
-                break;
-            } catch (DichVuException e) {
-                System.err.println(e.getMessage());
-            }
-        }
-
-
-        String dienTichHoBoi = "" ;
-        while (true){
-            System.out.println(" dien tich ho boi ");
-             dienTichHoBoi = (scanner.nextLine());
-            try {
-                DichVuException.kiemTraDienTich(dienTichHoBoi);
-                break;
-            } catch (DichVuException e) {
-                System.err.println(e.getMessage());
-            }
-        }
-
-
-       String soTang = "" ;
-        while (true){
-            System.out.println("so Tang");
-            soTang = (scanner.nextLine());
-            try {
-                DichVuException.kiemTraSoTang(soTang);
-                break;
-            } catch (DichVuException e) {
-                System.err.println(e.getMessage());
-            }
-        }
-
-
-        BietThu bietThu = new BietThu(tenDichVu,Double.parseDouble(dienTichSuDung),
-                Double.parseDouble(chiPhiThue),Integer.parseInt(soNguoiToiDa),kieuThue,tieuchuanPhong,tiennghiKhac,Double.parseDouble(dienTichHoBoi),Integer.parseInt(soTang));
-
-
-        dichVuList.add(bietThu);
-        DocGhiFile.ghiFile("dichvu.csv" ,dichVuList,true);
-    }
 }

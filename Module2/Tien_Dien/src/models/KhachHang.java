@@ -31,4 +31,6 @@ public abstract class KhachHang {
                 maKhachHang + "," + tenKhachHang + ",";
     }
 
+
+
 }

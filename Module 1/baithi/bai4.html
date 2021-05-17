@@ -8,6 +8,7 @@
 <h2 style="color: #d61b06">Các sản phẩm điện thoại của chúng tôi nhé : </h2>
 <p id="ketQua"></p>
 <input type="button" value="Thêm Điện Thoại " onclick="addDienThoai()">
+<input type="button" value="Suwax" onclick="edit()">
 <script>
     class DienThoai {
         constructor(ma, ten, hang, gia) {
@@ -94,6 +95,37 @@
         listDienThoai.push(dienThoai);
         display(listDienThoai);
     }
+ function edit(index) {
+     let phoneedit = listDienThoai[index];
+     let check=true;
+     do {
+         let choose = prompt("Chọn thuộc tính cấn sửa\n"+phoneedit.toString()+"\n 4.Exit");
+         switch (choose) {
+             case "1":
+                 let ma = prompt("Nhập ma mới");
+                 phoneedit.setMa(ma);
+                 break;
+             case "2":
+                 let newName = prompt("Nhập vào ten mới");
+                 phoneedit.setTen(newName);
+                 break;
+             case "3":
+                 let hang = prompt("Nhập hang mới");
+                 phoneedit.setAge(hang);
+                 break;
+                 case "4":
+                     let gia = prompt("Nhap Gia");
+                     phoneedit.setGia(gia)
+             default:
+                 check=false;
+         }
+     }while (check);
+     display(listDienThoai);
+
+ }
+
+
+
 
 </script>
 </body>
