@@ -12,84 +12,43 @@ import java.util.*;
 import java.util.regex.Pattern;
 
 public class ProductManager extends Products {
-    public static ArrayList<Products> productsList = new ArrayList<>();
-    static String regex= "^[a-zA-Z]*$";// nhập bẳng chử cái
-    static String regex1= "^[0-9]*$";//nhập số
-    static String regex2="^[aAàÀảẢãÃáÁạẠăĂằẰẳẲẵẴắẮặẶâÂầẦẩẨẫẪấẤậẬbBcCdDđĐeEèÈẻẺẽẼéÉẹẸêÊềỀểỂễỄếẾệỆ\n" +
-            "fFgGhHiIìÌỉỈĩĨíÍịỊjJkKlLmMnNoOòÒỏỎõÕóÓọỌôÔồỒổỔỗỖốỐộỘơƠờỜởỞỡỠớỚợỢpPqQrRsStTu\n" +
-            "UùÙủỦũŨúÚụỤưƯừỪửỬữỮứỨựỰvVwWxXyYỳỲỷỶỹỸýÝỵỴzZ]*$";// nhập dấu
-    public static void addProducts(){
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Thêm Id Sản Phẩm : ");
-        String id1 = scanner.nextLine();
-        if (!Pattern.matches(regex1,id1)){
-            do {
-                System.out.println("Vui lòng nhập lại");
-                id1 =scanner.nextLine();
-                if (Pattern.matches(regex1,id1)){
-                    break;
-                }
-            }while (true);
-
-        }
-        int id = Integer.parseInt(id1);
-
-
-        System.out.print("Thêm Tên Sản Phẩm : ");
-        String name = scanner.nextLine();
-//        !Pattern.matches(regex,name) &&//nếu muốn nhập bảng chử cái
-        if (!Pattern.matches(regex2,name)){// nhập bảng chử có dấu, khác là false thì vui lòng nhập lại
-            do {
-                System.out.println("Vui lòng nhập lại ");
-                name = scanner.nextLine();
-                if (Pattern.matches(regex2,name)){
-                    break;
-                }
-            }while (true);
-
-        }
-        System.out.print("Thêm Giá Sản Phẩm : ");
-       String  price1 =scanner.nextLine();// tạo biến mới
-        if (!Pattern.matches(regex1,price1)){// nhập số
-           do {
-               System.out.println("Vui lòng nhập lại");
-                price1 =scanner.nextLine();
-               if (Pattern.matches(regex1,price1)){ // khi đúng thì uot
-                   break;
-               }
-
-
-           }while (true);
-        }
-        long price = Long.parseLong(price1); // nhập là String ép về int do khai báo lúc đầu
-        Products products = new Products(id,name,price);
+    public static List<Products> productsList = new ArrayList<>();
+    static Scanner scanner = new Scanner(System.in);
+    public static void addProducts() {
+        String id = AddProduct.addId();
+        String name = AddProduct.addName();
+        String price = AddProduct.addPrice();
+        Products products = new Products(id, name, price);
         productsList.add(products);
+        DocGhiFile.GhiFile("Produc.csv", productsList, true);
     }
-    public static void editProducts(){
-        Scanner scanner = new Scanner(System.in);
+
+    public static void editProducts() {
+        productsList = DocGhiFile.docFile("Produc.csv");
         System.out.print("Nhập ID Sản Phẩm Cần Sửa: ");
-        int id = Integer.parseInt(scanner.nextLine());
+        String id = (scanner.nextLine());
         boolean check = false;
-        for(int i = 0 ; i < productsList.size() ; i++){
-            if(id == productsList.get(i).getId()){
+        for (int i = 0; i < productsList.size(); i++) {
+            if (id.equals(productsList.get(i).getId()))
                 System.out.println("Nhập Tên Sản Phẩm Muốn Sửa : ");
-                String name = scanner.nextLine();
-                System.out.println("Nhập Giá Muốn Sửa : ");
-                int price = Integer.parseInt(scanner.nextLine());
-                productsList.get(i).setNameProducts(name);
-                productsList.get(i).setPriceProduct(price);
-                check = true;
-                break;
-            }
+            String name = scanner.nextLine();
+            System.out.println("Nhập Giá Muốn Sửa : ");
+            String price =scanner.nextLine();
+            productsList.get(i).setNameProducts(name);
+            productsList.get(i).setPriceProduct(price);
+            check = true;
+            break;
         }
-        if(check == false){
-            System.out.println("Không tìm thấy sản phầm cùng ID");
+        if (!check){
+            System.out.println("Không tìm thấy Id bạn tìm ");
         }
     }
+
+
     public static void deleteProducts(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("Nhập Id Sản Phẩm Cần Xóa ");
-        int id = Integer.parseInt(scanner.nextLine());
+        String id = (scanner.nextLine());
         int index = -1;
         boolean check = false;
         for(int i = 0 ; i< productsList.size(); i++){
@@ -142,7 +101,7 @@ public class ProductManager extends Products {
         System.out.println("Bạn Muốn Tìm Kiếm Sản Phẩm : ");
         System.out.println("Nhập ID Sản Phẩm Bạn Muốn Tìm Kiếm : ");
         Scanner scanner= new Scanner(System.in);
-        int search = scanner.nextInt();
+        String search = scanner.nextLine();
         boolean check = false;
         int index = -1;
         for(int i = 0 ; i < productsList.size() ; i++){
@@ -192,7 +151,6 @@ public class ProductManager extends Products {
         System.out.println("7. Display Products : ");
         System.out.println("8. Search ID Products : ");
         System.out.println("9. Search Name Products : ");
-        System.out.println("10. Output Report : ");
         System.out.println("0. Exit: ");
         int choose ;
         System.out.println("Nhập Lựa chọn");
@@ -217,23 +175,11 @@ public class ProductManager extends Products {
                 break;
             case 9: searchName();
                 break;
-            case 10: outputReport();
-                break;
             case 0 : exitManage();
                 break;
         }
     }
 
-    private static void outputReport() throws IOException {
-        try {
-            FileWriter fw = new FileWriter("src\\pass2_quan_ly_san_pham\\readfile.csv");
-            for (Products product : productsList) {
-                fw.write(product.toString());
-            }
-            fw.close();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-    }
+
 
 }

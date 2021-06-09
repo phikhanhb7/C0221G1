@@ -11,4 +11,6 @@ public class RegexValidate {
         String regexNuocNgoai = "^(KHNN)-[0-9]{5}$";
         return Pattern.matches(regexNuocNgoai,string);
     }
+
+    
 }

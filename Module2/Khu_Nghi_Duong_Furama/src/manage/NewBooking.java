@@ -57,9 +57,11 @@ public class NewBooking {
                         if (id.equals(service.getId())){
                             elementLine = elementLine + "," + service ;
                             DocGhiFile.ghiFileString("Booking.csv",elementLine,true);
+                            break;
                         }
 
                     }
+                     break;
                 case "2":
                     serviceList = DocGhiFile.docFile("Services.csv");
                     for (Service service : serviceList){
@@ -74,6 +76,7 @@ public class NewBooking {
                         }
 
                     }
+                    break;
 
                 case "3":
                     serviceList = DocGhiFile.docFile("Services.csv");
@@ -89,6 +92,7 @@ public class NewBooking {
                         }
 
                     }
+                    break;
 
             }
         }

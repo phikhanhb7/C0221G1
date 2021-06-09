@@ -1,9 +1,7 @@
 package controllers;
 
 import comoms.DocGhiFile;
-import manage.AddCustomers;
-import manage.ManageServices;
-import manage.NewBooking;
+import manage.*;
 import models.*;
 
 import java.util.ArrayList;
@@ -29,7 +27,8 @@ public class MainController {
                     "4.\tShow Information of Customer\n" +
                     "5.\tAdd New Booking\n" +
                     "6.\tShow Information of Employee\n" +
-                    "7.\tExit\n");
+                    "7.\tBuff Cinema4D :)) \n" +
+                    "8.\tExit\n");
             System.out.println(" Nhập lựa chọn của bạn ");
             choose = scanner.nextLine();
             switch (choose) {
@@ -49,24 +48,18 @@ public class MainController {
                     NewBooking.addBooking();
                     break;
                 case "6":
-                    showEmployee();
+                    ShowEmployee.menuEmployee();
                     break;
                 case "7":
+                    Cinema4D.addCinemaTicket();
+                case "8":
                     System.out.println("GOOD BYE");
                     System.exit(0);
                 default:
-                    System.out.println("Vui lòng nhập từ 1 đến 7 ");
+                    System.out.println("Vui lòng nhập từ 1 đến 8 ");
             }
         }
     }
-
-    private static void showEmployee() {
-    }
-
-
-
-
-
 
 
 

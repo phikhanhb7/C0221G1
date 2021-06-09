@@ -14,30 +14,30 @@ public class CustomerException extends Exception {
 
 
     public static void kiemTraEmail(String string) throws CustomerException{
-        String regex = "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$";
+        String regex =  "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$";
         if (string.matches(regex) == false){
-            throw new CustomerException("Nhập lại đúng fomat :^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$ ");
+            throw new CustomerException("Nhập lại đúng fomat :^Email phải nhập đúng kiểu dữ liệu của email ở mức độ tương đối. Email bao gồm duy nhất chữ @ và tối thiểu 1 dấu .  ");
         }
     }
 
-    public static void kiemTraGioiTinh(String string) throws CustomerException{
-        String regex= "^(Nam|Nữ|Khác)$";
-        if (string.matches(regex) == false){
-            throw new CustomerException("Nhập lại đúng fomat :^(Nam|Nữ|Khác)");
+    public static void kiemTraGioiTinh(String gender) throws CustomerException{
+        gender = gender.toLowerCase();
+        if(gender.equals("male")||gender.equals("female")||gender.equals("unknow")){
+            return;
+        }else {
+            throw new CustomerException("The gender must be Male, Female or Unknow");
         }
     }
 
     public static void kiemTraChungMinh(String string) throws CustomerException{
         String regex= "[0-9]{10}$";
         if (string.matches(regex) == false){
-            throw new CustomerException("Nhập lại đúng fomat :\"[0-9]{9}$\";");
+            throw new CustomerException("Nhập lại đúng fomat :Id Card phải có 9 chữ số và theo định dạng XXX XXX XXX”.");
         }
     }
 
     public static void kiemTraNgaySinh(String string) throws CustomerException{
-        String regex = "^(((0[1-9]|[12][0-9]|3[01])[- /.](0[13578]|1[02])|(0[1-9]|[12][0-9]|30)[- /.]" +
-                "(0[469]|11)|(0[1-9]|1\\d|2[0-8])[- /.]02)[- /.]\\d{4}" +
-                "|29[- /.]02[- /.](\\d{2}(0[48]|[2468][048]|[13579][26])|([02468][04s8]|[1359][26])00))$";
+        String regex = "^([0][1-9]|[1][0-9]|[2][0-9]|[3][0-1])[\\\\/]([0][1-9]|[1][0-2])[\\\\/]([1][9][0][1-9]|[1][9][1-9][0-9]|[2][0-9][0-9][0-9])$";
         if (string.matches(regex) == false){
             throw new CustomerException("Nhập lại đúng >18 tuổi ");
         }

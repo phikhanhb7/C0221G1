@@ -1,7 +1,8 @@
 package models;
 
 public abstract class Service {
-    //Tên dịch vụ, Diện tích sử dụng, Chi phí thuê, Số lượng người tối đa, Kiểu thuê (bao gồm thuê theo năm, tháng, ngày, giờ).
+    //Tên dịch vụ, Diện tích sử dụng, Chi phí thuê, Số lượng người tối đa, Kiểu thuê (bao gồm thuê theo năm, tháng,
+    // ngày, giờ).
     String id ;
     String tenDichVu ;
     String dienTichUse ;
@@ -9,7 +10,8 @@ public abstract class Service {
     String soNguoiToiDa;
     String kieuThue ;
 
-    public Service(String id ,String tenDichVu, String dienTichUse, String chiPhiThue, String soNguoiToiDa, String kieuThue) {
+    public Service(String id ,String tenDichVu, String dienTichUse, String chiPhiThue, String soNguoiToiDa,
+                   String kieuThue) {
         this.id = id ;
         this.tenDichVu = tenDichVu;
         this.dienTichUse = dienTichUse;

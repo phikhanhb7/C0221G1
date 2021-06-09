@@ -23,11 +23,24 @@ public class AddCustomers {
 
     public static String nhapNgaySinh() {
         String ngaySinh;
+        int year = 0 ;
         while (true) {
             try {
                 System.out.println("Nhập Ngày Sinh");
                 ngaySinh = scanner.nextLine();
                 CustomerException.kiemTraNgaySinh(ngaySinh);
+                year=2021-Integer.parseInt(ngaySinh.substring(6));
+                while (true){
+                    if(year<18){
+                        System.err.println("Less than the current year 18 years");
+                        System.out.println("Enter Customer Birthday");
+                        ngaySinh = scanner.nextLine();
+                        CustomerException.kiemTraNgaySinh(ngaySinh);
+                        year=2021-Integer.parseInt(ngaySinh.substring(6));
+                    }else {
+                        break;
+                    }
+                }
                 return ngaySinh;
             } catch (CustomerException e) {
                 System.out.println(e.getMessage());
@@ -42,6 +55,14 @@ public class AddCustomers {
                 System.out.println("Nhập giới tính");
                 gioiTinh = scanner.nextLine();
                 CustomerException.kiemTraGioiTinh(gioiTinh);
+                gioiTinh = gioiTinh.toLowerCase();
+                if(gioiTinh.equals("male")){
+                    gioiTinh = "Male";
+                }else if(gioiTinh.equals("female")){
+                    gioiTinh = "Female";
+                }else {
+                    gioiTinh ="Unknow";
+                }
                 return gioiTinh;
             } catch (CustomerException e) {
                 System.out.println(e.getMessage());

@@ -7,7 +7,8 @@ public class Villa extends Service {
     private String dienTichHoBoi;
     private String soTang ;
 
-    public Villa(String id, String tenDichVu, String dienTichUse, String chiPhiThue, String soNguoiToiDa, String kieuThue, String tieuChuanPhong, String tienNghiKhac, String dienTichHoBoi, String soTang) {
+    public Villa(String id, String tenDichVu, String dienTichUse, String chiPhiThue, String soNguoiToiDa, String
+            kieuThue, String tieuChuanPhong, String tienNghiKhac, String dienTichHoBoi, String soTang) {
         super(id, tenDichVu, dienTichUse, chiPhiThue, soNguoiToiDa, kieuThue);
         this.tieuChuanPhong = tieuChuanPhong;
         this.tienNghiKhac = tienNghiKhac;

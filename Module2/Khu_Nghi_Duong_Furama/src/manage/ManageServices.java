@@ -12,7 +12,7 @@ public class ManageServices {
     static List<Service> serviceList = new ArrayList<>();
 
     public static void addRoom() {
-        String id = AddServices.idVilla();
+        String id = AddServices.nhapIdRoom();
         String tenDichVu = AddServices.nhapTendichVu();
         String dienTichUse = AddServices.nhapDienTichSuDung();
         String chiPhiThue = AddServices.nhapChiPhiThue();
@@ -26,7 +26,7 @@ public class ManageServices {
     }
 
     public static void addHouse() {
-        String id = AddServices.idVilla();
+        String id = AddServices.nhapIdHouse();
         String tenDichVu = AddServices.nhapTendichVu();
         String dienTichUse = AddServices.nhapDienTichSuDung();
         String chiPhiThue = AddServices.nhapChiPhiThue();

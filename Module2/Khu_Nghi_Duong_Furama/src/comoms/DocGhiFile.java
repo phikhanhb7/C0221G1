@@ -159,5 +159,31 @@ public class DocGhiFile {
     }
 
 
+    public static void ghiFileCinema(String fileName , List<CinemaTicket> cinemaTickets, boolean trangThai ){
+        File file = null ;
+        FileWriter fileWriter = null ;
+        BufferedWriter bufferedWriter = null ;
+        try{
+            file = new File(PATH + fileName);
+            fileWriter = new FileWriter(file,trangThai);
+            bufferedWriter = new BufferedWriter(fileWriter);
+            for (CinemaTicket cinemaTicket : cinemaTickets ){
+                bufferedWriter.write(cinemaTicket.styleWrite());
+                bufferedWriter.newLine();
+            }
+            bufferedWriter.flush();
+        }catch (IOException e){
+            e.printStackTrace();
+        }finally {
+            try {
+                bufferedWriter.close();
+                fileWriter.close();
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+        }
+    }
+
+
 
 }

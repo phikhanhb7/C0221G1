@@ -17,7 +17,6 @@ public class AddServices {
                  ServicesException.kiemIdVilla(idVilla);
                  return idVilla;
              }catch (ServicesException e ){
-                 e.printStackTrace();
                  System.err.println(e.getMessage());
              }
 
@@ -33,7 +32,6 @@ public class AddServices {
                 ServicesException.kiemIdHouse(idHouse);
                 return idHouse;
             }catch (ServicesException e ){
-                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
 
@@ -49,7 +47,6 @@ public class AddServices {
                 ServicesException.kiemIdRoom(idRoom);
                 return idRoom;
             }catch (ServicesException e ){
-                e.printStackTrace();
                 System.err.println(e.getMessage());
             }
 
@@ -65,7 +62,6 @@ public class AddServices {
                 ServicesException.kiemTenDichVu(tenDichVu);
                 return tenDichVu;
             }catch (ServicesException e){
-                e.printStackTrace();
                 System.out.println(e.getMessage());
             }
         }
@@ -80,7 +76,6 @@ public class AddServices {
                 ServicesException.kiemDienTichSuDung(dienTichSuDung);
                 return dienTichSuDung;
             }catch (ServicesException e){
-                e.printStackTrace();
                 System.out.println(e.getMessage());
             }
         }
@@ -96,7 +91,6 @@ public class AddServices {
                 ServicesException.kiemChiPhiThue(chiPhiThue);
                 return chiPhiThue;
             }catch (ServicesException e){
-                e.printStackTrace();
                 System.out.println(e.getMessage());
             }
         }
@@ -111,7 +105,6 @@ public class AddServices {
                 ServicesException.kiemSoNguoiToiDa(soNguoiToiDa);
                 return soNguoiToiDa;
             }catch (ServicesException e){
-                e.printStackTrace();
                 System.out.println(e.getMessage());
             }
         }
@@ -126,7 +119,6 @@ public class AddServices {
                 ServicesException.kiemTenDichVu(kieuThue);
                 return kieuThue;
             }catch (ServicesException e){
-                e.printStackTrace();
                 System.out.println(e.getMessage());
             }
         }
@@ -141,7 +133,6 @@ public class AddServices {
                 ServicesException.kiemTenDichVu(tieuChuanPhong);
                 return tieuChuanPhong;
             }catch (ServicesException e){
-                e.printStackTrace();
                 System.out.println(e.getMessage());
             }
         }
@@ -156,7 +147,6 @@ public class AddServices {
                 ServicesException.kiemTenDichVu(tienNghiKhac);
                 return tienNghiKhac;
             }catch (ServicesException e){
-                e.printStackTrace();
                 System.out.println(e.getMessage());
             }
         }
@@ -171,7 +161,6 @@ public class AddServices {
                 ServicesException.kiemSoTang(soTang);
                 return soTang;
             }catch (ServicesException e){
-                e.printStackTrace();
                 System.out.println(e.getMessage());
             }
         }
@@ -186,7 +175,6 @@ public class AddServices {
                 ServicesException.kiemDienTichHoBoi(dienTichHoBoi);
                 return dienTichHoBoi;
             }catch (ServicesException e){
-                e.printStackTrace();
                 System.out.println(e.getMessage());
             }
         }
@@ -201,7 +189,6 @@ public class AddServices {
                 ServicesException.kiemDichVuDiKem(dichVuDiKem);
                 return dichVuDiKem;
             }catch (ServicesException e){
-                e.printStackTrace();
                 System.out.println(e.getMessage());
             }
         }

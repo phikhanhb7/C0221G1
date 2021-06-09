@@ -1,20 +1,20 @@
 package pass2_quan_ly_san_pham;
 
 public class Products {
-    private int id;
+    private String id;
     private String nameProducts;
-    private double priceProduct;
+    private String priceProduct;
     public Products() {
     }
-    public Products(int id, String nameProducts, double priceProduct) {
+    public Products(String id, String nameProducts, String priceProduct) {
         this.id = id;
         this.nameProducts = nameProducts;
         this.priceProduct = priceProduct;
     }
-    public int getId() {
+    public String getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
     public String getNameProducts() {
@@ -23,18 +23,24 @@ public class Products {
     public void setNameProducts(String nameProducts) {
         this.nameProducts = nameProducts;
     }
-    public double getPriceProduct() {
+    public String getPriceProduct() {
         return priceProduct;
     }
-    public void setPriceProduct(double priceProduct) {
+    public void setPriceProduct(String priceProduct) {
         this.priceProduct = priceProduct;
     }
     @Override
     public String toString() {
+        return id +
+                "," + nameProducts +
+                "," + priceProduct;
+    }
+    public String showInfor(){
         return "Products{" +
                 "id=" + id +
                 ", nameProducts='" + nameProducts + '\'' +
                 ", priceProduct=" + priceProduct +
                 '}';
     }
+
 }
